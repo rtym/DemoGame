@@ -1,0 +1,8 @@
+%h1 Game
+
+%table
+  - @game.each do |row|
+    %tr
+    - row.each do |element|
+      %td{:style => "background: " + element}
+
