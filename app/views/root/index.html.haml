@@ -1,8 +1,10 @@
 %h1 Game
 
 %table
-  - @game.each do |row|
+  - @game.get_colors.each_with_index do |row, horizontal|
     %tr
-    - row.each do |element|
+    - row.each_with_index do |element, vertical|
       %td{:style => "background: " + element}
+        = link_to "", {:action => :index, :horizontal => horizontal, :vertical => vertical, :matrix => matrix_to_hash(@game.get_matrix)}, :class => :linker
+  = link_to "Regenerate", :action => :index
 

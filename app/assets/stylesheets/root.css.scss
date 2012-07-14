@@ -1,6 +1,17 @@
+$width: 30px;
+$height: 30px;
+
 table {
   td {
-    width: 30px;
-    height: 30px;
+    width: $width;
+    height: $height;
   }
+}
+
+a.linker {
+  display: block;
+  width: $width;
+  height: $height;
+  text-align: center;
+  text-decoration: none;
 }

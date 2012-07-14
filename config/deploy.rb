@@ -10,7 +10,7 @@ set :deploy_via, :remote_cache
 set :keep_releases, 10
 set :branch, "master"
 set :user, "deployer"
-set :password, "" #change password for production
+set :password, "deployerX292_go"
 set :use_sudo, true
 set :deploy_to, "/srv/http/#{application}/"
 
