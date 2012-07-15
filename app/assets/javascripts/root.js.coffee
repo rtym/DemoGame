@@ -1,3 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+linker = ->
+  $("a.linker").click ->
+    data =
+      matrix: $("#game_matrix").val()
+      horizontal: $(this).attr("horizontal")
+      vertical: $(this).attr("vertical")
+      play: true
+
+    $("#game").load $(location).attr("href") + " #game", data,  ->
+      linker()
+
+$(document).ready ->
+  linker()

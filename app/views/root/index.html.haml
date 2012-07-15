@@ -1,10 +1,12 @@
 %h1 Game
 
-%table
-  - @game.get_colors.each_with_index do |row, horizontal|
-    %tr
-    - row.each_with_index do |element, vertical|
-      %td{:style => "background: " + element}
-        = link_to "", {:action => :index, :horizontal => horizontal, :vertical => vertical, :matrix => matrix_to_hash(@game.get_matrix)}, :class => :linker
-  = link_to "Regenerate", :action => :index
+= hidden_field(:game, :matrix, {:value => matrix_to_hash(@game.get_matrix).to_json})
+%div{:id => :game}
+  %table
+    - @game.get_colors.each_with_index do |row, horizontal|
+      %tr
+        - row.each_with_index do |element, vertical|
+          %td{:style => "background: " + element}
+            %a{:class => :linker, :href => "javascript: void(0)", :horizontal => horizontal, :vertical => vertical}
+= link_to "Regenerate", :action => :index
 

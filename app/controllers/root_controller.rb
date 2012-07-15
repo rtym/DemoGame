@@ -1,6 +1,12 @@
 class RootController < ApplicationController
   def index
-    @game = DemoGame.new convert_hash_to_matrix(params[:matrix])
+    unless params[:matrix].blank?
+      @game = DemoGame.new convert_hash_to_matrix(JSON.parse(params[:matrix]))
+    else
+      @game = DemoGame.new
+    end
+
+    @game.play(params[:horizontal], params[:vertical]) unless params[:play].blank?
   end
 
   private
