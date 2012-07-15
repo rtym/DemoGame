@@ -122,7 +122,7 @@ class DemoGame
 
     for counter in 0..to do
       @matrix[counter + length][column] = @matrix[counter][column] if counter < from
-      @matrix[counter][column] = Random.rand(COLORS.size) if counter <= length
+      @matrix[counter][column] = Random.rand(COLORS.size) if counter < length
     end
   end
 
@@ -137,8 +137,8 @@ class DemoGame
       counter -= 1
     end
 
-    for counter in from..to do
-      @matrix[0][counter] = Random.rand(COLORS.size)
+    for element in from..to do
+      @matrix[0][element] = Random.rand(COLORS.size)
     end
   end
 end

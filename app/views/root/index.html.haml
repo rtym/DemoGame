@@ -1,7 +1,7 @@
 %h1 Game
 
-= hidden_field(:game, :matrix, {:value => matrix_to_hash(@game.get_matrix).to_json})
 %div{:id => :game}
+  = hidden_field(:game, :matrix, {:value => matrix_to_hash(@game.get_matrix).to_json})
   %table
     - @game.get_colors.each_with_index do |row, horizontal|
       %tr

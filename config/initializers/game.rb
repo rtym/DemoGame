@@ -1,4 +1,4 @@
-GAME_SIZE = 10
+GAME_SIZE = 8
 
 COLORS = ['red', 'green', 'blue']
 
